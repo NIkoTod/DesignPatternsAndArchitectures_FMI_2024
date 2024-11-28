@@ -20,5 +20,6 @@ public  class CarFilter extends Filter {
         // Add cash? (in future)
 
         return true;
+
     }
 }
