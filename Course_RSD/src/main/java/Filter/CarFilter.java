@@ -13,7 +13,8 @@ public  class CarFilter extends Filter {
 
         try {
             Map<String, Object> mapping = new ObjectMapper().readValue(query, HashMap.class);
-
+            mapping.get("price");
+            //TODO
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }
