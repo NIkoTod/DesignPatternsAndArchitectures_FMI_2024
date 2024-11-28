@@ -2,7 +2,7 @@ import Product.Product;
 import Product.Car;
 import Product.ProductType;
 import Product.Utils.FloatingDot;
-import User.StandartUser;
+import User.StandardUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 enum STATUS{
     guest,
-    standart,
+    standard,
     dealer
 }
 
@@ -28,8 +28,8 @@ public class Runner {
     public static void run(){
 
 
-        StandartUser user =
-                new StandartUser("1","Mobile","qwerty","email@emal.com");
+        StandardUser user =
+                new StandardUser("1","Mobile","qwerty","email@emal.com");
         List<Product> cars = new ArrayList<Product>();
         STATUS status = STATUS.guest;
         while(true){
@@ -47,12 +47,12 @@ public class Runner {
                 List<String> lines = takeNLines(2);
                 if (lines.get(0).trim().equals(user.getUserName()) &&
                         lines.get(1).trim().equals(user.getUserPassword())) {
-                    status = STATUS.standart;
+                    status = STATUS.standard;
                 }
                 System.out.println("Welcome " + user.getUserName() + "\n");
             }
             if(command.equals("add car")){
-                if(status != STATUS.standart) System.out.println("Login first");
+                if(status != STATUS.standard) System.out.println("Login first");
                 else {
                     System.out.println("Enter \n " +
                             "1 Brand \n " +
