@@ -20,6 +20,7 @@ public class Post {
         this.type = type;
         this.comments = comments;
         this.rating = rating;
+
     }
 
     public String getOwnerId() {

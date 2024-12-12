@@ -7,18 +7,14 @@ public class Dealer extends User{
     String name;
 
     public Dealer(String info, String licence, String name,
-                  String userName, String password,String userEmail, String userId) {
+                  String userName, String password,String userEmail, String userId,String userPhone,String userAdress) {
 
-        super(userName, password, userEmail, userId);
+        super(userName, password, userEmail, userId,userPhone, userAdress);
         this.Info = info;
         this.Licence = licence;
         this.name = name;
 
 
-    }
-
-    public Dealer(String userID, String userName, String userPassword, String userEmail) {
-        super(userID, userName, userPassword, userEmail);
     }
 
     public String getInfo() {

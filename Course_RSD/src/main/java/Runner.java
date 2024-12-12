@@ -29,7 +29,7 @@ public class Runner {
 
 
         StandardUser user =
-                new StandardUser("1","Mobile","qwerty","email@emal.com");
+                new StandardUser("1","Mobile","qwerty","email@emal.com","000000000","Джеймс Баучер 5");
         List<Product> cars = new ArrayList<Product>();
         STATUS status = STATUS.guest;
         while(true){
