@@ -1,6 +1,8 @@
 package Post;
 
 import java.util.List;
+
+import Notify.Notifier;
 import Product.Product;
 
 
@@ -20,6 +22,15 @@ public class Post {
         this.type = type;
         this.comments = comments;
         this.rating = rating;
+
+        sendToNotifier(product.toString());
+
+    }
+
+    private void sendToNotifier(String data) {
+
+        Notifier notifier = new Notifier();
+        notifier.notify(data);
 
     }
 
@@ -69,5 +80,7 @@ public class Post {
     public void setPostID(String postID) {
         this.postID = postID;
     }
+
+
 
 }

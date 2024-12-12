@@ -54,6 +54,14 @@ public abstract class User {
         UserEmail = userEmail;
     }
 
+    public String getUserPhone() {return UserPhone;}
+
+    public void setUserPhone(String userPhone) {    UserPhone = userPhone;}
+
+    public String getUserAddress() {return UserAddress;}
+
+    public void setUserAddress(String userAddress) {UserAddress = userAddress;}
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
