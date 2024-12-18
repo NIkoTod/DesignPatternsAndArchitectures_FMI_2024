@@ -1,4 +1,4 @@
-package Notify;
+package Notify.external;
 // не можете да ги пипате!
 public class PigeonNotifier {
     public void sendPigeon(String address, Integer pigeonNumber, String message) {

@@ -3,7 +3,7 @@ package Notify;
 import Repository.Repository;
 
 import java.util.Map;
-
+@Deprecated
 public class Notifier {
 
     public Notifier(){}

@@ -1,6 +1,12 @@
 package User;
 
-import Repository.Repository;
+import Filter.CarFilter;
+import Notify.NotificationRule;
+import Notify.NotificationService;
+import Notify.external.SmsNotifier;
+import Notify.channels.SmsNotificationChannel;
+
+import java.util.List;
 
 public class StandardUser extends User{
 
@@ -9,7 +15,14 @@ public class StandardUser extends User{
     }
 
     public void setNotification(String preferences,String notificationType) {
-        Repository.getInstance().addNotification(userID,preferences,notificationType);
+        NotificationService notificationService = new NotificationService();
+        notificationService.subscribe(
+                new NotificationRule(
+                        List.of(new CarFilter().build()),
+                        new SmsNotificationChannel(new SmsNotifier(), "+359888888888")
+                )
+        );
+
     }
 
 }

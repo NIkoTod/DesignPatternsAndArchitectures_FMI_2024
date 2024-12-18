@@ -2,6 +2,7 @@ package Post;
 
 import java.util.List;
 
+import Notify.NotificationService;
 import Notify.Notifier;
 import Product.Product;
 
@@ -23,15 +24,13 @@ public class Post {
         this.comments = comments;
         this.rating = rating;
 
-        sendToNotifier(product.toString());
+        sendToNotifier(type);
 
     }
 
-    private void sendToNotifier(String data) {
-
-        Notifier notifier = new Notifier();
-        notifier.notify(data);
-
+    private void sendToNotifier(Type type) {//type is for special posts
+        NotificationService notifier = new NotificationService();
+        notifier.onNewListingAdded(this);
     }
 
     public String getOwnerId() {

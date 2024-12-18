@@ -31,4 +31,6 @@ public  class CarFilter extends Filter {
         return true;
 
     }
+
+    public CarFilter build(){return this;};
 }

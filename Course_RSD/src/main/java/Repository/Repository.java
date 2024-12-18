@@ -16,11 +16,12 @@ public class Repository {
         return instance;
     }
 
+    @Deprecated
     public void addNotification(String userID,String query,String notificationType){
         //Adding to db;
     }
 
-
+    @Deprecated
     public Map<String,String> getNotification(String query){
         //getting from db list of ids which we shoud notify;
         return null;
