@@ -18,7 +18,7 @@ public class StandardUser extends User{
         NotificationService notificationService = new NotificationService();
         notificationService.subscribe(
                 new NotificationRule(
-                        List.of(new CarFilter().build()),
+                        new CarFilter().build(),//inline or other filter building
                         new SmsNotificationChannel(new SmsNotifier(), "+359888888888")
                 )
         );

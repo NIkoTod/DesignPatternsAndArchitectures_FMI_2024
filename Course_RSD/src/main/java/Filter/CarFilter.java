@@ -10,7 +10,6 @@ public  class CarFilter extends Filter {
     @Override
     public boolean filter(String query, Product product) {
 
-
         try {
             Map<String, Object> mapping = new ObjectMapper().readValue(query, HashMap.class);
             mapping.get("price");
@@ -33,4 +32,6 @@ public  class CarFilter extends Filter {
     }
 
     public CarFilter build(){return this;};
+    //builder for filter and data link?
+    //bc idk how we treat data   audi -> which filter???
 }
