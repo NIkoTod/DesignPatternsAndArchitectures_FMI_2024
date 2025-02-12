@@ -9,9 +9,6 @@ public abstract class Filter {
     List<filter<Integer>> filters;
     public boolean filter(String query, Product product){
 
-
-
-
         return true;
     }
 
