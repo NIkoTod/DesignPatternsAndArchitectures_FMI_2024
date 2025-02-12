@@ -6,7 +6,7 @@ import java.util.List;
 
 public class filterProcessor {
 
-    public Boolean  processFilters(List<filter<Integer>> filters,int N){
+    public Boolean processFilters(List<filter<Integer>> filters,int N){
 
         int M = filters.size();
         int R = 0;

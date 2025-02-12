@@ -15,7 +15,7 @@ public class NotificationService {
 
     public void onNewListingAdded(Post post) {
         for (NotificationRule notificationRule : notificationRules) {
-            boolean shouldNotify = true;
+                boolean shouldNotify = true;
                 if (!notificationRule.filter().filter(notificationRule.toString(),post.getProduct())) {
                     shouldNotify = false;
                     break;
