@@ -17,7 +17,7 @@ public class QParser {
                 String trim = e.get(2).replaceAll("'","").replaceAll("\"","");
                 exl.add(new expressionBinaryString(e.get(0), e.get(1).charAt(0) , trim));
             }
-            else {exl.add(new expressionBinaryDigit(e.get(0), e.get(1).charAt(0) , Integer.parseInt(e.get(2))));}
+            else {exl.add(new expressionBinaryDigit(e.get(0), e.get(1).charAt(0) , Double.parseDouble(e.get(2))));}
         }
 
         return exl;

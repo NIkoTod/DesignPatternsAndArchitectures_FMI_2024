@@ -6,14 +6,16 @@ import Product.Utils.FloatingDot;
 public class Car extends Product{
 
     String brand;
+    String model;
     FloatingDot engineVolume;
     int doorAmount;
     int year;
 
-    public Car(String brand, FloatingDot engineVolume, int doorAmount, int year, FloatingDot price, ProductType type) {
+    public Car(String brand,String model, FloatingDot engineVolume, int doorAmount, int year, FloatingDot price, ProductType type) {
         this.brand = brand;
         this.engineVolume = engineVolume;
         this.doorAmount = doorAmount;
+        this.model = model;
         this.year = year;
         super.setPrice(price);
         super.setType(type.toString());
@@ -54,6 +56,7 @@ public class Car extends Product{
     @Override
     public String getStrValueByStr(String field){
         if(field.equals("brand")){return brand;}
+        if(field.equals("model")){return model;}
         return super.getStrValueByStr(field);
     }
 
@@ -76,5 +79,8 @@ public class Car extends Product{
         return brand + " " + engineVolume.getX() + " " + doorAmount + " " + year;
     }
 
-
+    @Override
+    public String archiveString() {
+        return brand.toLowerCase() + model.toLowerCase();
+    }
 }

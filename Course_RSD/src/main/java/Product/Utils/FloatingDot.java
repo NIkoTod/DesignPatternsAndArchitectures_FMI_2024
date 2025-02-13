@@ -1,13 +1,13 @@
 package Product.Utils;
 
 public class FloatingDot {
-    int x;
+    Double x;
 
-    public int getX() {
+    public Double getX() {
         return x;
     }
 
-    public void setX(int x) {
+    public void setX(Double x) {
         this.x = x;
     }
 }

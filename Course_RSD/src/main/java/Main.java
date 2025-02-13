@@ -23,10 +23,10 @@ public class Main {
 
 
 
-        String str = "brand = 'BMW' & year > 2015";
-        QParser qp = new QParser();
-        List<expression> r = qp.parse(str);
-        r.forEach(System.out::println);
+//        String str = "brand = 'BMW' & year > 2015";
+//        QParser qp = new QParser();
+//        List<expression> r = qp.parse(str);
+//        r.forEach(System.out::println);
 
         //StandardUser u1 = new StandardUser(1,"Vova","1234",)
 

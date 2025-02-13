@@ -7,7 +7,7 @@ public class equalsFilter implements filter<String> {
 
     @Override
     public Boolean executeFilter() {
-        return rhs.equals(value);
+        return rhs.equalsIgnoreCase(value);
     }
 
     public filter<String> setRhs(String rhs) {

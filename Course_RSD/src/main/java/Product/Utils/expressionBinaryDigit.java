@@ -17,7 +17,7 @@ public class expressionBinaryDigit extends expression {
 
     @Override
     public void setLhs(String lhs) {
-
+        this.lhs = lhs;
     }
 
     @Override

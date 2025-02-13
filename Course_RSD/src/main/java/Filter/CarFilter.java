@@ -33,7 +33,8 @@ public  class CarFilter extends Filter {
             else return false;
         }
 
-        return flist.stream().map(filter::executeFilter).allMatch(e -> e == true);
+        //actually
+        return flist.stream().map(filter::executeFilter).allMatch(e -> e == true);//for snippet
 
     }
 

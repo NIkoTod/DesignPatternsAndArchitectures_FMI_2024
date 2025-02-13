@@ -2,6 +2,7 @@ package Post;
 
 import java.util.List;
 
+import Archive.Archive;
 import Notify.NotificationService;
 import Notify.Notifier;
 import Product.Product;
@@ -11,26 +12,27 @@ import Product.Product;
 public class Post {
 
     String postID;
+    String dateOfPublication;
     String ownerId;
     Product product;
     Type type;
     List<String> comments;
     int rating;
 
-    public Post(String ownerId, Product product, Type type, List<String> comments, int rating) {
+    public Post(String ownerId, Product product, Type type, String dateOfPublication) {
         this.ownerId = ownerId;
         this.product = product;
         this.type = type;
-        this.comments = comments;
-        this.rating = rating;
+        this.dateOfPublication = dateOfPublication;
 
         //sendToNotifier(type);
 
     }
 
-    public Post(Product product,NotificationService notifier) {
+    public Post(Product product, NotificationService notifier, Archive archive) {//for snipped only
         this.product = product;
         sendToNotifier(notifier);
+        archive.add(this);
     }
 
     private void sendToNotifier(NotificationService notificationService) {//type is for special posts
@@ -80,6 +82,7 @@ public class Post {
     public String getPostID() {
         return postID;
     }
+
     public void setPostID(String postID) {
         this.postID = postID;
     }
