@@ -1,17 +1,24 @@
 package Filter.lowLevelFilters;
 
-public class lessThenFilter implements filter<Integer>{
+public class lessThenFilter implements filter<Double>{
 
-    private int max;
-    private int value;
+    private double max;
+    private double value;
 
     @Override
     public Boolean executeFilter() {
         return value < max;
     }
 
-    public void setMax(int _max) {max = _max;};
-    public void setValue(Integer _value) {value = _value;};
+
+    public lessThenFilter setMax(double max) {this.max = max; return this;}
+
+    @Override
+    public lessThenFilter setValue(Double value) {
+        this.value = value;
+        return this;
+    }
+
 
 
 }

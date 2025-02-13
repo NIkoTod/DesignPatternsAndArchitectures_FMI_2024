@@ -15,11 +15,11 @@ public class NotificationService {
 
     public void onNewListingAdded(Post post) {
         for (NotificationRule notificationRule : notificationRules) {
-                boolean shouldNotify = true;
-                if (!notificationRule.filter().filter(notificationRule.toString(),post.getProduct())) {
+            boolean shouldNotify = true;
+                if (!notificationRule.filter().filter(post.getProduct())) {
                     shouldNotify = false;
                     break;
-            }
+                }
             if (shouldNotify) {
                 String message = post.getProduct().toString();
                 notificationRule.channel().notify(

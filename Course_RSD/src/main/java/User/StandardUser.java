@@ -14,13 +14,13 @@ public class StandardUser extends User{
         super(userID, userName, userPassword, userEmail, UserPhone, UserAdress  );
     }
 
-    public void setNotification(String preferences,String notificationType) {
-        NotificationService notificationService = new NotificationService();
+    public void setNotification(String preferences,NotificationService notificationService,String channel) {
         notificationService.subscribe(
                 new NotificationRule(
-                        new CarFilter().build(),//inline or other filter building
+                        new CarFilter(preferences),//inline or other filter building
                         new SmsNotificationChannel(new SmsNotifier(), "+359888888888")
                 )
+
         );
 
     }

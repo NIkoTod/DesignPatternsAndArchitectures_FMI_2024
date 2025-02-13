@@ -1,11 +1,11 @@
 package Filter.lowLevelFilters;
 
-public class rangeFilter implements filter<Integer>{
+public class rangeFilter implements filter<Double>{
 
     private int min;
     private int max;
 
-    private int value;
+    private double value;
 
     @Override
     public Boolean executeFilter() {
@@ -13,9 +13,11 @@ public class rangeFilter implements filter<Integer>{
     }
 
     @Override
-    public void setValue(Integer _value) {
+    public rangeFilter setValue(Double _value) {
         value = _value;
+        return null;
     }
+
     void setMin(int _min){min = _min;};
     void setMax(int _max){max = _max;};
 

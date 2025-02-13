@@ -4,6 +4,7 @@ import Product.ProductType;
 import Product.Utils.FloatingDot;
 import Product.Utils.QParser;
 import Product.Utils.expression;
+import User.StandardUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,11 +22,15 @@ public class Main {
 //        System.out.println(car.getIntValueByStr("year"));
 
 
+
         String str = "brand = 'BMW' & year > 2015";
         QParser qp = new QParser();
         List<expression> r = qp.parse(str);
         r.forEach(System.out::println);
-        //Runner.run();
+
+        //StandardUser u1 = new StandardUser(1,"Vova","1234",)
+
+        Runner.run();
 
     }
 }

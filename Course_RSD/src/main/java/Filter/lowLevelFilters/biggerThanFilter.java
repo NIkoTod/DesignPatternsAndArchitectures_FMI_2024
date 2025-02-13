@@ -1,17 +1,22 @@
 package Filter.lowLevelFilters;
 
-public class biggerThanFilter implements filter<Integer>{
+public class biggerThanFilter implements filter<Double>{
 
-    private int min;
-    private int value;
+    private double min;
+    private double value;
 
     @Override
     public Boolean executeFilter() {
         return value > min;
     }
 
+
+
+    public biggerThanFilter setMin(double min) {this.min = min;return this;}
+
     @Override
-    public void setValue(Integer _value) {
+    public biggerThanFilter setValue(Double _value) {
         value = _value;
+        return this;
     }
 }

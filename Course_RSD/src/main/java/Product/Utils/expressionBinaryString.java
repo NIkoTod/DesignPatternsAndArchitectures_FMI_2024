@@ -1,9 +1,13 @@
 package Product.Utils;
 
+import Filter.lowLevelFilters.equalsFilter;
+import Filter.lowLevelFilters.filter;
+
 public class expressionBinaryString extends expression{
-    String rhs;
+
+    String lhs;//actually should be another expression
     char op;
-    String lhs;
+    String rhs;
 
     public expressionBinaryString(String lhs,char op ,String rhs) {
         this.lhs = lhs;
@@ -20,8 +24,20 @@ public class expressionBinaryString extends expression{
     public String getLhs(){return lhs;}
 
     @Override
+    public filter getFilter() {
+        if(op == '=')return new equalsFilter().setRhs(rhs);
+        return null;
+    }
+
+    @Override
+    public char type() {
+        return 'b';//string
+    }
+
+    @Override
     public boolean exec() {
-        return false;
+        //other logic for trees
+        return true;
     }
 
     @Override

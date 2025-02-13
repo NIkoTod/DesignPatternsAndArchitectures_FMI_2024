@@ -24,13 +24,17 @@ public class Post {
         this.comments = comments;
         this.rating = rating;
 
-        sendToNotifier(type);
+        //sendToNotifier(type);
 
     }
 
-    private void sendToNotifier(Type type) {//type is for special posts
-        NotificationService notifier = new NotificationService();
-        notifier.onNewListingAdded(this);
+    public Post(Product product,NotificationService notifier) {
+        this.product = product;
+        sendToNotifier(notifier);
+    }
+
+    private void sendToNotifier(NotificationService notificationService) {//type is for special posts
+        notificationService.onNewListingAdded(this);
     }
 
     public String getOwnerId() {

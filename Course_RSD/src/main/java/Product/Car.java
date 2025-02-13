@@ -58,17 +58,17 @@ public class Car extends Product{
     }
 
     @Override
-    public Integer getIntValueByStr(String field) {
-        if(field.equals("engineVolume")){return engineVolume.getX();}
-        if(field.equals("doorAmount")){return doorAmount;}
-        if(field.equals("year")){return year;}
+    public Double getIntValueByStr(String field) {
+        if(field.equals("engineVolume")){return (double) engineVolume.getX();}
+        if(field.equals("doorAmount")){return (double) doorAmount;}
+        if(field.equals("year")){return (double) year;}
         return super.getIntValueByStr(field);
     }
 
     @Override
     public boolean isMatchingFilter(String filter) {
-        CarFilter carFilter = new CarFilter();
-        return carFilter.filter(filter,this);
+        CarFilter carFilter = new CarFilter(filter);
+        return carFilter.filter(this);
     }
 
     @Override

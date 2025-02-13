@@ -31,9 +31,9 @@ public abstract class Product {
         return "";
     }
 
-    public Integer getIntValueByStr(String field){
-        if(field.equals("price"))return price.getX();
-        return -1;
+    public Double getIntValueByStr(String field){
+        if(field.equals("price"))return (double) price.getX();
+        return -1.0;
     }
 
     public abstract boolean isMatchingFilter(String filter);

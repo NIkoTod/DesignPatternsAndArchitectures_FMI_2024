@@ -1,6 +1,7 @@
 package Filter.Util;
 
 import java.util.Map;
+@Deprecated
 
 public class JsonFieldExtractor {
 

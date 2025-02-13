@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Search extends Filter {
     @Override
-    public boolean filter(String query, Product product) {
+    public boolean filter(Product product) {
         return false;
     }
 }

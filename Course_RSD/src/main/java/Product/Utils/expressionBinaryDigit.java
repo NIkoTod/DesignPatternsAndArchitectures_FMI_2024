@@ -1,5 +1,9 @@
 package Product.Utils;
 
+import Filter.lowLevelFilters.biggerThanFilter;
+import Filter.lowLevelFilters.filter;
+import Filter.lowLevelFilters.lessThenFilter;
+
 public class expressionBinaryDigit extends expression {
     String lhs;
     char op;
@@ -20,8 +24,22 @@ public class expressionBinaryDigit extends expression {
     public String getLhs(){return lhs;}
 
     @Override
+    public filter getFilter() {
+        if(op == '>') return (new biggerThanFilter().setMin(rhs));
+        if(op == '<') return (new lessThenFilter().setMax(rhs));
+        return null;
+    }
+
+    @Override
+    public char type() {
+        return 'a';//digit
+    }
+
+
+    @Override
     public boolean exec() {
-        return false;
+        //other logic for trees
+        return true;
     }
 
     @Override

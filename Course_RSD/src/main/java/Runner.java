@@ -1,3 +1,5 @@
+import Notify.NotificationService;
+import Post.Post;
 import Product.Product;
 import Product.Car;
 import Product.ProductType;
@@ -19,11 +21,13 @@ public class Runner {
     private static List<String> takeNLines(int n){
         List<String> lines = new ArrayList<String>();
         Scanner sc = new Scanner(System.in);
+
         while(n-- > 0){
             lines.add(sc.nextLine());
         }
         return lines;
     }
+    static NotificationService notificationService = new NotificationService();
 
     public static void run(){
 
@@ -74,7 +78,7 @@ public class Runner {
                             ProductType.car);
 
                     cars.add(newcar);
-
+                    Post post = new Post(newcar,notificationService);
                     System.out.println("Car added");
                 }
 
@@ -82,6 +86,12 @@ public class Runner {
 
             if(command.equals("show cars")){
                 System.out.println(cars);
+            }
+
+            if(command.equals("subscribe")){
+                System.out.println("Enter query:");
+                List<String> lines = takeNLines(1);
+                user.setNotification(lines.get(0).trim(),notificationService,"sms");
             }
 
             if (command.equals("logout")){
